@@ -161,7 +161,7 @@ function HeaderComponent(props) {
           <a href="/products">TRANG CHỦ</a>
         </Menu.Item> */}
         <Menu.Item key="office">
-          <a href="/products?categoryId=office">VĂN PHÒNG</a>
+          <a href="/products">SẢN PHẨM</a>
         </Menu.Item>
         <Menu.Item key="school">
           <a href="/products?categoryId=school">HỌC SINH</a>
@@ -175,9 +175,9 @@ function HeaderComponent(props) {
         <Menu.Item key="blog">
           <a href="/blog">BLOG</a>
         </Menu.Item>
-        <Menu.Item key="sale">
+        {/* <Menu.Item key="sale">
           <a href="/products/view-all">KHUYẾN MÃI</a>
-        </Menu.Item>
+        </Menu.Item> */}
       </Menu>
 
       {/* Right Side Icons */}

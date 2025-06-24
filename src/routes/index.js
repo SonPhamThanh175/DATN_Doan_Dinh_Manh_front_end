@@ -1,4 +1,6 @@
-// import { LoginPage } from "../../src/pages/Auth/LoginPage/index";
+import { LoginPage } from "../../src/pages/Auth/LoginPage/index";
+import AboutUs from "../pages/AboutUs";
+import BlogPage from "../pages/BlogPage";
 // import { SocialRedirect } from "../pages/Auth/SocialMediaRedirect";
 // import CartPages from "../pages/Cart";
 // import HomePage from "../pages/HomePage";
@@ -68,13 +70,13 @@ export const routes = [
     //         },
     //       ],
     // },
-    // { 
-    //     path:'/login',
-    //     exact: true,
-    //     page : LoginPage,
-    //     isShowHeader : false,
-    //     isShowFooter : false,
-    // },
+    { 
+        path:'/login',
+        exact: true,
+        page : LoginPage,
+        isShowHeader : false,
+        isShowFooter : false,
+    },
     // { 
     //     path:'/products',
     //     // exact: true,
@@ -150,20 +152,20 @@ export const routes = [
     //         },
     //       ],
     // },
-    // { 
-    //     path:'/about',
-    //     page : AboutUs,
-    //     exact: true,
-    //     isShowHeader : true,
-    //     isShowFooter : true,
-    // },
-    // { 
-    //     path:'/blog',
-    //     page : BlogPage,
-    //     exact: true,
-    //     isShowHeader : true,
-    //     isShowFooter : true,
-    // },
+    { 
+        path:'/about',
+        page : AboutUs,
+        exact: true,
+        isShowHeader : true,
+        isShowFooter : true,
+    },
+    { 
+        path:'/blog',
+        page : BlogPage,
+        exact: true,
+        isShowHeader : true,
+        isShowFooter : true,
+    },
     // { 
     //     path:'/success-page',
     //     page : SuccessPage,
