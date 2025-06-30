@@ -6,12 +6,12 @@ import BlogPage from "../pages/BlogPage";
 // import HomePage from "../pages/HomePage";
 // import NotFound from "../pages/NotFound";
 // import OrderPage from "../pages/Order";
-// import Product from "../pages/Product";
-// import ProductAdditional from "../pages/Product/components/ProductAdditional";
-// import ProductDescription from "../pages/Product/components/ProductDescription";
-// import ProductReviews from "../pages/Product/components/ProductReviews";
+import Product from "../pages/Product";
+import ProductAdditional from "../pages/Product/components/ProductAdditional";
+import ProductDescription from "../pages/Product/components/ProductDescription";
+import ProductReviews from "../pages/Product/components/ProductReviews";
 // // import SuggestedProducts from "../pages/Product/components/SuggestedProducts ";
-// import DetailPage from "../pages/Product/pages/DetailPage";
+import DetailPage from "../pages/Product/pages/DetailPage";
 // import SuccessPage from "../pages/Order/components/SuccessPage";
 // import OrderHistory from "../pages/Order/components/OrderHistory";  
 // import AccountInfo from "../pages/AccountInfo";
@@ -77,13 +77,13 @@ export const routes = [
         isShowHeader : false,
         isShowFooter : false,
     },
-    // { 
-    //     path:'/products',
-    //     // exact: true,
-    //     page : Product,
-    //     isShowHeader : true,
-    //     isShowFooter : true,
-    // },
+    { 
+        path:'/products',
+        // exact: true,
+        page : Product,
+        isShowHeader : true,
+        isShowFooter : true,
+    },
     // { 
     //     path:'/products/view-all',
     //     // exact: true,
@@ -91,27 +91,27 @@ export const routes = [
     //     isShowHeader : true,
     //     isShowFooter : true,
     // },
-    // { 
-    //     path:'/products/:productId',
-    //     // exact: true,
-    //     page : DetailPage,
-    //     isShowHeader : true,
-    //     isShowFooter : true,
-    //     children: [
-    //         {
-    //           path: '',
-    //           page: ProductDescription,
-    //         },
-    //         {
-    //           path: 'additional',
-    //           page: ProductAdditional,
-    //         },
-    //         {
-    //           path: 'reviews',
-    //           page: ProductReviews,
-    //         },
-    //       ],
-    // },
+    { 
+        path:'/products/:productId',
+        // exact: true,
+        page : DetailPage,
+        isShowHeader : true,
+        isShowFooter : true,
+        children: [
+            {
+              path: '',
+              page: ProductDescription,
+            },
+            {
+              path: 'additional',
+              page: ProductAdditional,
+            },
+            {
+              path: 'reviews',
+              page: ProductReviews,
+            },
+          ],
+    },
     // { 
     //     path:'/auth/social/redirect',
     //     page : SocialRedirect,
