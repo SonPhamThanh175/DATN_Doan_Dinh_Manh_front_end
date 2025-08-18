@@ -60,7 +60,7 @@ function HeaderComponent(props) {
     (async () => {
       try {
         const cartList = await cartsApi.getAll(userId);
-        console.log("cartList", cartList);
+        
         setCartList(cartList);
         dispatch(setCartChanged(false));
       } catch (error) {

@@ -1,0 +1,74 @@
+/* Added office supplies themed styles */
+.account-page {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.account-menu {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.account-menu .ant-menu {
+  background: transparent;
+  border: none;
+}
+
+.account-menu .ant-menu-item {
+  border-radius: 8px;
+  margin: 0 4px;
+  transition: all 0.2s ease;
+}
+
+.account-menu .ant-menu-item:hover {
+  background: rgba(59, 130, 246, 0.1);
+  color: #2563eb;
+}
+
+.account-menu .ant-menu-item-selected {
+  background: #2563eb;
+  color: white;
+}
+
+.account-form .ant-form-item-label > label {
+  font-weight: 500;
+  color: #374151;
+}
+
+.account-form .ant-input,
+.account-form .ant-select-selector {
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  transition: all 0.2s ease;
+}
+
+.account-form .ant-input:focus,
+.account-form .ant-select-focused .ant-select-selector {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.office-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.office-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.office-button {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.office-button.ant-btn-primary {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+.office-button.ant-btn-primary:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}

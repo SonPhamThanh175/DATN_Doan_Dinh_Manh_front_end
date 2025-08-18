@@ -28,9 +28,9 @@ const cartsApi = {
         return axiosClient.patch(url, data);
     },
 
-    delete(userId, productId,size,color) {
+    delete(userId, productId) {
         const url = `api/carts/user/${userId}`;
-        return axiosClient.put(url,{productId,size,color});
+        return axiosClient.put(url,{productId});
     }
 };
 

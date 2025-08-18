@@ -1,3 +1,5 @@
+"use client"
+
 import { useState, useEffect } from "react"
 import {
   Building2,
@@ -10,16 +12,12 @@ import {
   Users,
   Star,
   ChevronRight,
-  Menu,
-  X,
   Phone,
   Mail,
   MapPin,
   Facebook,
   Instagram,
   Twitter,
-  ShoppingCart,
-  Search,
   ArrowRight,
 } from "lucide-react"
 import "./home-style.css"
@@ -37,12 +35,14 @@ export default function HomePage() {
     {
       title: "Thiết Bị Văn Phòng Hiện Đại",
       subtitle: "Máy tính, máy in, máy photocopy và các thiết bị công nghệ tiên tiến",
-      image: "https://huce.edu.vn/images57/portal-1/Tin%20t%E1%BB%A9c/Ho%E1%BA%A1t%20%C4%91%E1%BB%99ng%20chung/2022/T11/xay-dung-a2-1662871290911.jpg",
+      image:
+        "https://huce.edu.vn/images57/portal-1/Tin%20t%E1%BB%A9c/Ho%E1%BA%A1t%20%C4%91%E1%BB%99ng%20chung/2022/T11/xay-dung-a2-1662871290911.jpg",
     },
     {
       title: "Dụng Cụ Học Tập Chất Lượng",
       subtitle: "Phục vụ học sinh, sinh viên với đầy đủ dụng cụ học tập cần thiết",
-      image: "https://huce.edu.vn/images57/portal-1/Tin%20t%E1%BB%A9c/Ho%E1%BA%A1t%20%C4%91%E1%BB%99ng%20chung/2022/T11/xay-dung-a6-1662871291192.jpg",
+      image:
+        "https://huce.edu.vn/images57/portal-1/Tin%20t%E1%BB%A9c/Ho%E1%BA%A1t%20%C4%91%E1%BB%99ng%20chung/2022/T11/xay-dung-a6-1662871291192.jpg",
     },
   ]
 
@@ -127,39 +127,32 @@ export default function HomePage() {
 
   return (
     <div className="homepage">
-      {/* Header
-      <header className="header">
+      {/* Separator Section */}
+      <section className="separator-section">
         <div className="container">
-          <div className="header-content">
-            <div className="logo">
-              <Building2 size={32} />
-              <span>HUCE</span>
+          <div className="separator-content">
+            <div className="breadcrumb">
+              <span>Trang chủ</span>
+              <ChevronRight size={16} />
+              <span>Văn phòng phẩm chất lượng cao</span>
             </div>
-
-            <nav className={`nav ${isMenuOpen ? "nav-open" : ""}`}>
-              <a href="#home">Trang Chủ</a>
-              <a href="#products">Sản Phẩm</a>
-              <a href="#about">Giới Thiệu</a>
-              <a href="#services">Dịch Vụ</a>
-              <a href="#contact">Liên Hệ</a>
-            </nav>
-
-            <div className="header-actions">
-              <div className="search-box">
-                <input type="text" placeholder="Tìm kiếm sản phẩm..." />
-                <Search size={20} />
+            <div className="service-highlights">
+              <div className="highlight-item">
+                <Truck size={18} />
+                <span>Miễn phí vận chuyển đơn từ 500K</span>
               </div>
-              <button className="cart-btn">
-                <ShoppingCart size={24} />
-                <span className="cart-count">0</span>
-              </button>
-              <button className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
+              <div className="highlight-item">
+                <Shield size={18} />
+                <span>Bảo hành chính hãng</span>
+              </div>
+              <div className="highlight-item">
+                <Clock size={18} />
+                <span>Hỗ trợ 24/7</span>
+              </div>
             </div>
           </div>
         </div>
-      </header> */}
+      </section>
 
       {/* Hero Section */}
       <section className="hero" id="home">

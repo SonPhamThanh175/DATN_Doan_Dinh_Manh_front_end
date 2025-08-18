@@ -15,12 +15,11 @@ import {
 } from "@ant-design/icons"
 
 import productsApi from "../../../api/productApi"
-import FilterViewer from "../components/FilterViewer"
 import ProductFilter from "../components/ProductFilter"
 import ProductList from "../components/ProductList"
 import ProductSort from "../components/ProductSort"
 import ProductClear from "../components/ProductClear"
-import ProductType from "../components/Type/ProductType"
+import MenuItemLeft from "../../Product/components/ProductMenu"
 import "./list-page-style.css"
 
 const { Title, Text, Paragraph } = Typography
@@ -85,11 +84,23 @@ function ListPage(props) {
     })
   }
 
-  const handleCategoryChange = (newCategoryGender) => {
+  const handleCategoryChange = (menuData) => {
     const filters = {
       ...queryParams,
-      typeId: newCategoryGender,
     }
+
+    // Clear previous selections
+    delete filters.menuId
+    delete filters.categoryId
+    delete filters.typeId
+
+    // Set new selection based on field type
+    if (menuData.field === "categoryId") {
+      filters.categoryId = menuData.id
+    } else if (menuData.field === "typeId") {
+      filters.typeId = menuData.id
+    }
+
     navigate({
       pathname: location.pathname,
       search: queryString.stringify(filters),
@@ -196,14 +207,14 @@ function ListPage(props) {
                 <ProductFilter filters={queryParams} onChange={handleFiltersChange} />
               </Card>
 
-              <Card className="category-card">
+              {/* <Card className="category-card">
                 <div className="category-header">
                   <Title level={4}>
                     <AppstoreOutlined /> Danh mục sản phẩm
                   </Title>
                 </div>
-                <ProductType filters={queryParams} onChange={handleCategoryChange} />
-              </Card>
+                <MenuItemLeft onChange={handleCategoryChange} />
+              </Card> */}
             </div>
           </Col>
 

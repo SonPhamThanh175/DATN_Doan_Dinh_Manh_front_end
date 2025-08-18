@@ -1,0 +1,25 @@
+/* Custom styles for Ant Design components */
+.ant-timeline-item-tail {
+    border-inline-width: 2px !important;
+  }
+  
+  .ant-timeline-item-head {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  
+  .ant-timeline-item {
+    padding-bottom: 20px !important;
+  }
+  
+  .ant-timeline-item-content {
+    margin-inline-start: 20px !important;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .ant-timeline-item-content {
+      margin-inline-start: 12px !important;
+    }
+  }
+  

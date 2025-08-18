@@ -1,3 +1,4 @@
+"use client"
 
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
@@ -18,7 +19,6 @@ import {
   Checkbox,
   InputNumber,
   Divider,
-  Tag,
   Space,
   notification,
   Spin,
@@ -64,6 +64,8 @@ function CartPages() {
   const { enqueueSnackbar } = useSnackbar()
 
   const cartItems = useSelector((state) => state.cart.cartItems)
+  console.log("cartItems", cartItems)
+
   const cartItemsCount = useSelector(cartItemsCountSelector)
   const cartItemsTotal = useSelector(cartTotalSelector)
 
@@ -109,11 +111,11 @@ function CartPages() {
     fetchData()
   }, [cartItems, userId])
 
-  const handleRemoveItem = async (productId, size, color) => {
+  const handleRemoveItem = async (productId) => {
     try {
       const userId = localStorage.getItem("userId")
       const token = localStorage.getItem("access_token")
-      const payload = { productId, size, color }
+      const payload = { productId }
 
       await axios.put(`http://localhost:5000/api/carts/user/${userId}`, payload, {
         headers: {
@@ -121,9 +123,9 @@ function CartPages() {
         },
       })
 
-      dispatch(removeFromCart({ productId, size, color }))
+      dispatch(removeFromCart({ productId }))
       dispatch(setCartChanged(true))
-      setCartList(cartList.filter((item) => item.productId !== productId || item.size !== size || item.color !== color))
+      setCartList(cartList.filter((item) => item.productId !== productId))
 
       notification.success({
         message: "Thành công",
@@ -171,12 +173,10 @@ function CartPages() {
       productId: selectedProduct.productId,
       price: selectedProduct.product[0].salePrice,
       quantity: selectedProduct.quantity,
-      urlImage: selectedProduct.color,
-      color: selectedProduct.color,
-      size: selectedProduct.size,
+      urlImage: selectedProduct.product[0].images?.[0] || "/placeholder.svg?height=80&width=80",
     }))
 
-    const payloadPay = { userId, products: updatedProducts, shippingInfo }
+    const payloadPay = { userId, products: updatedProducts, shippingInfo ,isInCart: true}
 
     if (!userId) return
 
@@ -258,18 +258,16 @@ function CartPages() {
                     </div>
 
                     <div className="cart-item-image">
-                      <img src={cartItem.color || "/placeholder.svg?height=80&width=80"} alt={cartItem.name} />
+                      <img
+                        src={cartItem.product[0]?.images?.[0] || "/placeholder.svg?height=80&width=80"}
+                        alt={cartItem.name}
+                      />
                     </div>
 
                     <div className="cart-item-details">
                       <Title level={5} className="product-name">
                         {cartItem.name}
                       </Title>
-
-                      <div className="product-attributes">
-                        {cartItem.size && <Tag color="blue">Size: {cartItem.size}</Tag>}
-                        {cartItem.colorName && <Tag color="green">Màu: {cartItem.colorName || "Mặc định"}</Tag>}
-                      </div>
 
                       <div className="product-price">
                         <Text strong className="current-price">
@@ -309,7 +307,7 @@ function CartPages() {
                         type="text"
                         danger
                         icon={<DeleteOutlined />}
-                        onClick={() => handleRemoveItem(cartItem.productId, cartItem.size, cartItem.color)}
+                        onClick={() => handleRemoveItem(cartItem.productId)}
                         className="delete-button"
                       >
                         Xóa
