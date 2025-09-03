@@ -99,12 +99,13 @@ function Product({ product, viewMode = "grid", showActions = true, showRating = 
           </div>
 
           {/* Product Image */}
-          <div className="image-wrapper">
+          <div className="image-wrapper" style={{height: compact ? "150px" : "200px"}}>
             <img
               src={isHovered && hoverImageUrl !== thumbnailUrl ? hoverImageUrl : thumbnailUrl}
               alt={product.name}
               className="product-image"
               onError={() => setImageError(true)}
+              style={{height: compact ? "150px" : "200px"}}
             />
             {imageError && (
               <div className="image-fallback">

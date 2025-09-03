@@ -88,6 +88,7 @@
   background: #f8fafc;
   border-radius: 0.5rem;
   overflow: hidden;
+  height: 200px;
 }
 
 .product-image-container {

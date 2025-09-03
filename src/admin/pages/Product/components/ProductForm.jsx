@@ -16,16 +16,14 @@ const ProductForm = ({ product, onClose, accessToken }) => {
         { value: '6696a2ce8675a1be4a653e24', label: 'Bút gel mực nước' },
         { value: '6696a6258675a1be4a653e29', label: 'Bút gel nhiều màu' },
         { value: '6696a62e8675a1be4a653e2b', label: 'Bút bi thường' },
-        // { value: '6696a63f8675a1be4a653e2d', label: 'Sports Wear' },
-        // { value: '6696a64e8675a1be4a653e2f', label: 'Sneaker đen' },
-        // { value: '66968db78675a1be4a653de4', label: 'Đánh gôn' },
+
     ];
 
     const femaleTypes = [
-        // { value: '6696a08f8675a1be4a653e1c', label: 'Originals' },
-        // { value: '6696a6958675a1be4a653e32', label: 'Bóng đá' },
-        // { value: '6696a6a48675a1be4a653e34', label: 'Chạy bộ' },
-        // { value: '6696a6b28675a1be4a653e36', label: 'Tập' },
+        { value: '66ab4f30deb2918d5e8648a1', label: 'Giấy A4' },
+        { value: '68b7c8334b1c8a0100028b21', label: 'Giấy A3' },
+        { value: '6696a82f8675a1be4a653e2f', label: 'Giấy in ảnh' },
+        { value: '6696a8b18675a1be4a653e31', label: 'Giấy bìa cứng' }
     ];
 
     useEffect(() => {
