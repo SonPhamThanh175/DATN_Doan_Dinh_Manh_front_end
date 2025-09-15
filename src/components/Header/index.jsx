@@ -164,10 +164,10 @@ function HeaderComponent(props) {
           <a href="/products">SẢN PHẨM</a>
         </Menu.Item>
         <Menu.Item key="school">
-          <a href="/products?categoryId=school">HỌC SINH</a>
+          <a href="/products?categoryId=66968d748675a1be4a653de2">BÚT BI</a>
         </Menu.Item>
         <Menu.Item key="art">
-          <a href="/products?categoryId=art">MỸ THUẬT</a>
+          <a href="/products?categoryId=66969dec8675a1be4a653e01">GIẤY</a>
         </Menu.Item>
         <Menu.Item key="about">
           <a href="/about">GIỚI THIỆU</a>
